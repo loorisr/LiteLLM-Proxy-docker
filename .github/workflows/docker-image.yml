@@ -17,7 +17,7 @@ jobs:
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
-      - name: set lower case owner name
+      - name: set lower case repository name
         run: |
            echo "REPO_LC=${REPO,,}" >>${GITHUB_ENV}
         env:
@@ -31,4 +31,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ REPO_LC }}:latest
+          tags: ${ REPO_LC }:latest
