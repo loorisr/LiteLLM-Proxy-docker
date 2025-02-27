@@ -1,0 +1,39 @@
+model_list:
+  - model_name: mistral-small-latest
+    litellm_params:
+      model: mistral/mistral-small-latest
+      api_key: os.environ/MISTRAL_API_KEY
+      api_base: https://api.mistral.ai/v1
+
+  - model_name: mistral-large-latest
+    litellm_params:
+      model: mistral/mistral-large-latest
+      api_key: os.environ/MISTRAL_API_KEY
+      api_base: https://api.mistral.ai/v1
+
+  - model_name: ovh-deepkseek-70b
+    litellm_params:
+      model: openai/DeepSeek-R1-Distill-Llama-70B
+      api_key: os.environ/OVH_API_KEY
+      api_base: https://deepseek-r1-distill-llama-70b.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1
+
+  - model_name: ovh-llama-3-3-70b
+    litellm_params:
+      model: openai/Meta-Llama-3_3-70B-Instruct
+      api_key: os.environ/GEMINI_API_KEY
+      api_base: https://llama-3-3-70b-instruct.endpoints.kepler.ai.cloud.ovh.net/api/openai_compat/v1
+
+  - model_name: gemini-2.0-flash
+    litellm_params:
+      model: gemini/gemini-2.0-flash
+      api_key: os.environ/GEMINI_API_KEY
+
+  - model_name: gemini-2.0-pro-exp-02-05
+    litellm_params:
+      model: gemini/gemini-2.0-pro-exp-02-05
+      api_key: os.environ/GEMINI_API_KEY
+
+  - model_name: gemini-2.0-flash-thinking-exp-01-21
+    litellm_params:
+      model: gemini/gemini-2.0-flash-thinking-exp-01-21
+      api_key: os.environ/GEMINI_API_KEY
