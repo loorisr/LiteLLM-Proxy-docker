@@ -1,4 +1,4 @@
-name: ci
+name: build_deploy_docker
 
 on:
   push:
@@ -17,11 +17,11 @@ jobs:
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
 
-      - name: set lower case repository name
+      - name: Set lower case repository name
         run: |
-           echo "REPO_LC=${REPO,,}" >>${GITHUB_ENV}
+          echo "REPO_LC=${REPO,,}" >> ${GITHUB_ENV}
         env:
-           REPO: '${{ github.repository }}'
+          REPO: ${{ github.repository }}
     
       -
         name: Set up Docker Buildx
@@ -31,4 +31,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${ REPO_LC }:latest
+          tags: ${{ env.REPO_LC }}:latest
