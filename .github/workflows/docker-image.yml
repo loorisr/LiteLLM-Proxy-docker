@@ -16,6 +16,13 @@ jobs:
       -
         name: Set up QEMU
         uses: docker/setup-qemu-action@v3
+
+      - name: set lower case owner name
+        run: |
+           echo "REPO_LC=${REPO,,}" >>${GITHUB_ENV}
+        env:
+           REPO: '${{ github.repository }}'
+    
       -
         name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
@@ -24,4 +31,4 @@ jobs:
         uses: docker/build-push-action@v6
         with:
           push: true
-          tags: ${{ github.repository }}:latest
+          tags: ${{ REPO_LC }}:latest
