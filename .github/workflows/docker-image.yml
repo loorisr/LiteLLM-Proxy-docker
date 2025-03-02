@@ -1,7 +1,9 @@
 name: build_deploy_docker
 
 on:
-  push:
+  #push:
+  schedule:
+    - cron: '27 6 * * 1'
 
 jobs:
   docker:
