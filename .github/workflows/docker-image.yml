@@ -1,6 +1,7 @@
 name: build_deploy_docker
 
 on:
+  workflow_dispatch:  # allows to run the workflow manually from the Actions tab
   #push:
   schedule:
     - cron: '27 6 * * 1'
